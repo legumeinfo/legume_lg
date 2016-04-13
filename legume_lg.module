@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * This file contains all Drupal hooks for the module other than any
+ * node hooks and block hooks. Those go in the [module name].chado_node.inc file
+ * and [module_name].blocks.inc respectively
+ *
+ * @ingroup legume_lg
+ */
+
+require_once('includes/legume_lg.chado_node.inc');
+
+function legume_lg_theme($existing, $type, $theme, $path) {
+  $path = drupal_get_path('module', 'legume_lg');
+
+  $items = array(
+    'tripal_feature_lg_base' => array(
+      'variables' => array('node' => NULL),
+      'template' => 'tripal_feature_lg_base',
+      'path' => "$path/theme/templates",
+    ),
+
+  );
+
+  return $items;
+}
