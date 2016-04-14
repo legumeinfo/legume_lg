@@ -58,6 +58,8 @@
   // Size
   $feature = chado_expand_var($feature, 'table', 'featurepos', $table_options);
   $featurepos = $feature->featurepos;
+  $start = 0;
+  $stop = 0;
   foreach ($featurepos as $pos) {
     $sql = "
       SELECT fp.*, c.name AS type FROM {featureposprop} fp
